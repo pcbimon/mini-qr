@@ -557,7 +557,7 @@ async function generateBatchQRCodes(format: 'png' | 'svg') {
           <div class="flex flex-row items-center gap-2">
             <a
               class="icon-button"
-              href="https://github.com/lyqht/styled-qr-code-generator"
+              href="https://github.com/pcbimon/mini-qr"
               target="_blank"
               :aria-label="t('GitHub repository for this project')"
             >
