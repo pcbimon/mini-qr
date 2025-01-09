@@ -680,11 +680,13 @@ async function generateBatchQRCodes(format: 'png' | 'svg') {
               </div>
             </div>
             <div class="mt-4 flex flex-col items-center gap-2">
-              <div class="flex flex-col items-center justify-center gap-3">
-                <button
+              <div id="export-options" class="pt-4">
+                <p class="pb-2 text-zinc-900 dark:text-zinc-100">{{ t('Export as') }}</p>
+                <div class="flex flex-col items-center justify-center gap-2">
+                  <button
                   v-if="IS_COPY_IMAGE_TO_CLIPBOARD_SUPPORTED"
                   id="copy-qr-image-button"
-                  class="button flex w-fit max-w-[200px] flex-row items-center gap-1"
+                  class="button flex w-fit max-w-full flex-row items-center gap-1"
                   @click="copyQRToClipboard"
                   :disabled="exportMode === ExportMode.Batch"
                   :title="
@@ -715,66 +717,6 @@ async function generateBatchQRCodes(format: 'png' | 'svg') {
                   </svg>
                   <p>{{ t('Copy QR Code to clipboard') }}</p>
                 </button>
-                <button
-                  id="save-qr-code-config-button"
-                  class="button flex w-fit max-w-[200px] flex-row items-center gap-1"
-                  @click="downloadQRConfig"
-                  :aria-label="t('Save QR Code configuration')"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <g
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                    >
-                      <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                      <path
-                        d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2zm-5-4v-6"
-                      />
-                      <path d="M9.5 14.5L12 17l2.5-2.5" />
-                    </g>
-                  </svg>
-                  <p>{{ t('Save QR Code configuration') }}</p>
-                </button>
-                <button
-                  id="load-qr-code-config-button"
-                  class="button flex w-fit max-w-[200px] flex-row items-center gap-1"
-                  @click="loadQrConfigFromFile"
-                  :aria-label="t('Load QR Code configuration')"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <g
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                    >
-                      <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                      <path
-                        d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2zm-5-10v6"
-                      />
-                      <path d="M9.5 13.5L12 11l2.5 2.5" />
-                    </g>
-                  </svg>
-                  <p>{{ t('Load QR Code configuration') }}</p>
-                </button>
-              </div>
-              <div id="export-options" class="pt-4">
-                <p class="pb-2 text-zinc-900 dark:text-zinc-100">{{ t('Export as') }}</p>
-                <div class="flex flex-col items-center justify-center gap-2">
                   <button
                     id="download-qr-image-button-png"
                     class="button flex w-fit max-w-full flex-row items-center gap-1"
@@ -834,6 +776,66 @@ async function generateBatchQRCodes(format: 'png' | 'svg') {
                   </button>
                 </div>
               </div>
+              <div class="flex flex-col items-center justify-center gap-3">
+                <p class="pb-2 text-zinc-900 dark:text-zinc-100">{{ t('Configulation as') }}</p>
+                <button
+                  id="save-qr-code-config-button"
+                  class="button flex w-fit max-w-[200px] flex-row items-center gap-1"
+                  @click="downloadQRConfig"
+                  :aria-label="t('Save QR Code configuration')"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    >
+                      <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                      <path
+                        d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2zm-5-4v-6"
+                      />
+                      <path d="M9.5 14.5L12 17l2.5-2.5" />
+                    </g>
+                  </svg>
+                  <p>{{ t('Save QR Code configuration') }}</p>
+                </button>
+                <button
+                  id="load-qr-code-config-button"
+                  class="button flex w-fit max-w-[200px] flex-row items-center gap-1"
+                  @click="loadQrConfigFromFile"
+                  :aria-label="t('Load QR Code configuration')"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    >
+                      <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                      <path
+                        d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2zm-5-10v6"
+                      />
+                      <path d="M9.5 13.5L12 11l2.5 2.5" />
+                    </g>
+                  </svg>
+                  <p>{{ t('Load QR Code configuration') }}</p>
+                </button>
+              </div>
+              
             </div>
           </div>
           <div id="settings" class="flex w-full grow flex-col items-start gap-8 text-start">
