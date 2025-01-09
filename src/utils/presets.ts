@@ -3,6 +3,7 @@ import GeeksHackingConfig from '@/assets/presets/geekshacking.json'
 import SpDigitalConfig from '@/assets/presets/spdigital.json'
 import GovtechStackCommunityConfig from '@/assets/presets/govtech_stack.json'
 import PlainConfig from '@/assets/presets/plain.json'
+import iNTMUConfig from '@/assets/presets/iNT_mu.json'
 import type { DrawType, Options as StyledQRCodeProps } from 'qr-code-styling'
 
 export interface CustomStyleProps {
@@ -246,7 +247,7 @@ export const vueJsPreset: Preset = {
 export const defaultPreset: Preset = {
   ...defaultPresetOptions,
   name: 'Default (lyqht)',
-  data: 'https://github.com/lyqht',
+  data: 'https://github.com/pcbimon',
   image: PLACEHOLDER_IMAGE_URL,
   dotsOptions: {
     color: '#abcbca',
@@ -287,6 +288,13 @@ export const geeksHackingPreset = {
   style: GeeksHackingConfig.style
 } as Preset
 
+export const iNTMUPreset = {
+  ...defaultPresetOptions,
+  name: 'iNT MU',
+  ...iNTMUConfig.props,
+  style: iNTMUConfig.style
+} as Preset
+
 export const spDigitalPreset = {
   ...defaultPresetOptions,
   name: 'SP Digital',
@@ -324,6 +332,7 @@ export const allPresets: Preset[] = [
     pejuangKodePreset,
     geeksHackingPreset,
     spDigitalPreset,
-    govtechStackCommunityPreset
+    govtechStackCommunityPreset,
+    iNTMUPreset
   ].sort((a, b) => a.name.localeCompare(b.name))
 ]

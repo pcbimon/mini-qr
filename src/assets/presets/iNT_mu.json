@@ -1,0 +1,31 @@
+{
+    "props": {
+        "data": "https://www.spdigital.sg/",
+        "image": "https://pcbimon.github.io/mini-qr/assets/iNT_Logo.png",
+        "width": 200,
+        "height": 200,
+        "margin": 0,
+        "dotsOptions": {
+            "color": "#00578f",
+            "type": "extra-rounded"
+        },
+        "cornersSquareOptions": {
+            "color": "#00578f",
+            "type": "dot"
+        },
+        "cornersDotOptions": {
+            "color": "#f68b1f",
+            "type": "dot"
+        },
+        "imageOptions": {
+            "margin": 2
+        },
+        "qrOptions": {
+            "errorCorrectionLevel": "H"
+        }
+    },
+    "style": {
+        "borderRadius": "28px",
+        "background": "#ffffff"
+    }
+}
