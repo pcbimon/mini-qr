@@ -1,4 +1,5 @@
 import PLACEHOLDER_IMAGE_URL from '@/assets/placeholder_image.png'
+import INT_MU_LOGO from '@/assets/iNT_Logo.png'
 import GeeksHackingConfig from '@/assets/presets/geekshacking.json'
 import SpDigitalConfig from '@/assets/presets/spdigital.json'
 import GovtechStackCommunityConfig from '@/assets/presets/govtech_stack.json'
@@ -292,7 +293,8 @@ export const iNTMUPreset = {
   ...defaultPresetOptions,
   name: 'iNT MU',
   ...iNTMUConfig.props,
-  style: iNTMUConfig.style
+  style: iNTMUConfig.style,
+  image: INT_MU_LOGO
 } as Preset
 
 export const spDigitalPreset = {
@@ -317,6 +319,7 @@ export const plainPreset = {
 } as Preset
 
 export const allPresets: Preset[] = [
+  iNTMUPreset,
   defaultPreset,
   plainPreset,
   ...[
@@ -332,7 +335,6 @@ export const allPresets: Preset[] = [
     pejuangKodePreset,
     geeksHackingPreset,
     spDigitalPreset,
-    govtechStackCommunityPreset,
-    iNTMUPreset
+    govtechStackCommunityPreset
   ].sort((a, b) => a.name.localeCompare(b.name))
 ]
