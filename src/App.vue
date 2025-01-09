@@ -774,58 +774,63 @@ async function generateBatchQRCodes(format: 'png' | 'svg') {
               </div>
               <div id="export-options" class="pt-4">
                 <p class="pb-2 text-zinc-900 dark:text-zinc-100">{{ t('Export as') }}</p>
-                <div class="flex flex-row items-center justify-center gap-2">
+                <div class="flex flex-col items-center justify-center gap-2">
                   <button
                     id="download-qr-image-button-png"
-                    class="button"
+                    class="button flex w-fit max-w-full flex-row items-center gap-1"
                     @click="downloadQRImageAsPng"
                     :aria-label="t('Download QR Code as PNG')"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
                     >
-                      <g
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                      >
-                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                        <path
-                          d="M5 12V5a2 2 0 0 1 2-2h7l5 5v4m1 3h-1a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1v-3M5 18h1.5a1.5 1.5 0 0 0 0-3H5v6m6 0v-6l3 6v-6"
-                        />
-                      </g>
-                    </svg>
+                      <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                      <path
+                        d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2zm-5-4v-6"
+                      />
+                      <path d="M9.5 14.5L12 17l2.5-2.5" />
+                    </g>
+                  </svg>
+                  Download Image as PNG
                   </button>
+
                   <button
                     id="download-qr-image-button-svg"
-                    class="button"
+                    class="button flex w-fit max-w-full flex-row items-center gap-1"
                     @click="downloadQRImageAsSvg"
                     :aria-label="t('Download QR Code as SVG')"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
                     >
-                      <g
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                      >
-                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                        <path
-                          d="M5 12V5a2 2 0 0 1 2-2h7l5 5v4M4 20.25c0 .414.336.75.75.75H6a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H5a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h1.25a.75.75 0 0 1 .75.75m3-.75l2 6l2-6m6 0h-1a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1v-3"
-                        />
-                      </g>
-                    </svg>
+                      <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                      <path
+                        d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2zm-5-4v-6"
+                      />
+                      <path d="M9.5 14.5L12 17l2.5-2.5" />
+                    </g>
+                  </svg>
+                  Download Image as SVG
                   </button>
                 </div>
               </div>
