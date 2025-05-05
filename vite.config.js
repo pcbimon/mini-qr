@@ -6,6 +6,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
+  base: '/mini-qr/', // แทนที่ 'mini-qr' ด้วยชื่อ repository ของคุณ
   plugins: [
     vue(),
     vueJsx(),
