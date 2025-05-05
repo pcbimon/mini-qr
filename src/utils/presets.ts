@@ -326,24 +326,4 @@ export const iNTMUPreset = {
   image: INT_MU_LOGO
 } as Preset
 
-export const allPresets: Preset[] = [
-  iNTMUPreset,
-  defaultPreset,
-  plainPreset,
-  ...[
-    padletPreset,
-    uiliciousPreset,
-    supabaseGreenPreset,
-    supabasePurplePreset,
-    vercelLightPreset,
-    vercelDarkPreset,
-    viteConf2023Preset,
-    vueJsPreset,
-    vuei18nPreset,
-    pejuangKodePreset,
-    geeksHackingPreset,
-    spDigitalPreset,
-    govtechStackCommunityPreset,
-    hackomania2025Preset
-  ].sort((a, b) => a.name.localeCompare(b.name))
-]
+export const allPresets: Preset[] = [iNTMUPreset, plainPreset]

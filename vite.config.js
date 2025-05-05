@@ -75,6 +75,17 @@ export default defineConfig({
       }
     })
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split vendor libraries into a separate chunk
+          vendor: ['vue']
+        }
+      }
+    },
+    chunkSizeWarningLimit: 2000 // Set the limit to 1000 kB
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
