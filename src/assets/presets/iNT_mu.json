@@ -7,15 +7,15 @@
     "margin": 0,
     "dotsOptions": {
       "color": "#00578f",
-      "type": "squeare"
+      "type": "square"
     },
     "cornersSquareOptions": {
       "color": "#00578f",
-      "type": "squeare"
+      "type": "square"
     },
     "cornersDotOptions": {
       "color": "#f68b1f",
-      "type": "squeare"
+      "type": "square"
     },
     "imageOptions": {
       "margin": 2
