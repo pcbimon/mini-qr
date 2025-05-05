@@ -1,0 +1,31 @@
+{
+  "props": {
+    "data": "https://int.mahidol.ac.th/",
+    "image": "https://pcbimon.github.io/mini-qr/assets/iNT_Logo.png",
+    "width": 1000,
+    "height": 1000,
+    "margin": 0,
+    "dotsOptions": {
+      "color": "#00578f",
+      "type": "squeare"
+    },
+    "cornersSquareOptions": {
+      "color": "#00578f",
+      "type": "squeare"
+    },
+    "cornersDotOptions": {
+      "color": "#f68b1f",
+      "type": "squeare"
+    },
+    "imageOptions": {
+      "margin": 2
+    },
+    "qrOptions": {
+      "errorCorrectionLevel": "H"
+    }
+  },
+  "style": {
+    "borderRadius": "0px",
+    "background": "#ffffff"
+  }
+}

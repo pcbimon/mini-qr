@@ -879,90 +879,15 @@ const updateDataFromModal = (newData: string) => {
           </div>
         </div>
         <div class="mt-4 flex flex-col items-center gap-8">
-          <div class="flex flex-col items-center justify-center gap-3">
-            <button
-              v-if="IS_COPY_IMAGE_TO_CLIPBOARD_SUPPORTED && exportMode !== ExportMode.Batch"
-              id="copy-qr-image-button"
-              class="button flex w-fit max-w-full flex-row items-center gap-1"
-              @click="copyQRToClipboard"
-              :disabled="isExportButtonDisabled"
-              :title="
-                isExportButtonDisabled
-                  ? t('Please enter data to encode first')
-                  : t('Copy QR Code to clipboard')
-              "
-              :aria-label="t('Copy QR Code to clipboard')"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <g
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                >
-                  <path d="M8 10a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2z" />
-                  <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
-                </g>
-              </svg>
-              <p>{{ t('Copy QR Code to clipboard') }}</p>
-            </button>
-            <button
-              id="save-qr-code-config-button"
-              class="button flex w-fit max-w-full flex-row items-center gap-1"
-              @click="downloadQRConfig"
-              :title="t('Save QR Code configuration')"
-              :aria-label="t('Save QR Code configuration')"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <g
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                >
-                  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                  <path
-                    d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2zm-5-4v-6"
-                  />
-                  <path d="M9.5 13.5L12 11l2.5 2.5" />
-                </g>
-              </svg>
-              <p>{{ t('Save QR Code configuration') }}</p>
-            </button>
-            <button
-              id="load-qr-code-config-button"
-              class="button flex w-fit max-w-full flex-row items-center gap-1"
-              @click="loadQrConfigFromFile"
-              :aria-label="t('Load QR Code configuration')"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <g
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                >
-                  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                  <path
-                    d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2zm-5-10v6"
-                  />
-                  <path d="M9.5 13.5L12 11l2.5 2.5" />
-                </g>
-              </svg>
-              <p>{{ t('Load QR Code configuration') }}</p>
-            </button>
-          </div>
           <div id="export-options" class="grid place-items-center gap-4">
             <p class="text-zinc-900 dark:text-zinc-100">{{ t('Export as') }}</p>
-            <div class="flex flex-row items-center justify-center gap-2">
+            <div class="flex flex-col items-center justify-center gap-2">
               <button
                 id="download-qr-image-button-png"
-                class="button"
+                class="ocus:ring-opacity/75 flex justify-center rounded-lg bg-blue-500 px-4 py-2 font-semibold text-white shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 @click="() => downloadQRImage('png')"
                 :disabled="isExportButtonDisabled"
+                :class="{ 'cursor-not-allowed opacity-50': isExportButtonDisabled }"
                 :title="
                   isExportButtonDisabled
                     ? t('Please enter data to encode first')
@@ -970,27 +895,11 @@ const updateDataFromModal = (newData: string) => {
                 "
                 :aria-label="t('Download QR Code as PNG')"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                  <g fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                    <path d="M5 12V5a2 2 0 0 1 2-2h7l5 5v4" />
-                    <text
-                      x="1"
-                      y="22"
-                      fill="currentColor"
-                      stroke="none"
-                      font-size="11px"
-                      font-family="monospace"
-                      font-weight="600"
-                    >
-                      PNG
-                    </text>
-                  </g>
-                </svg>
+                <span class="material-icons me-1">download</span> Save as PNG
               </button>
               <button
                 id="download-qr-image-button-jpg"
-                class="button"
+                class="ocus:ring-opacity/75 flex justify-center rounded-lg bg-blue-500 px-4 py-2 font-semibold text-white shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 @click="() => downloadQRImage('jpg')"
                 :disabled="isExportButtonDisabled"
                 :title="
@@ -1000,27 +909,11 @@ const updateDataFromModal = (newData: string) => {
                 "
                 :aria-label="t('Download QR Code as JPG')"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                  <g fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                    <path d="M5 12V5a2 2 0 0 1 2-2h7l5 5v4" />
-                    <text
-                      x="1"
-                      y="22"
-                      fill="currentColor"
-                      stroke="none"
-                      font-size="11px"
-                      font-family="monospace"
-                      font-weight="600"
-                    >
-                      JPG
-                    </text>
-                  </g>
-                </svg>
+                <span class="material-icons me-1">download</span> Save as JPG
               </button>
               <button
                 id="download-qr-image-button-svg"
-                class="button"
+                class="focus:ring-opacity/75 flex justify-center rounded-lg bg-blue-500 px-4 py-2 font-semibold text-white shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 @click="() => downloadQRImage('svg')"
                 :disabled="isExportButtonDisabled"
                 :title="
@@ -1030,23 +923,7 @@ const updateDataFromModal = (newData: string) => {
                 "
                 :aria-label="t('Download QR Code as SVG')"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                  <g fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                    <path d="M5 12V5a2 2 0 0 1 2-2h7l5 5v4" />
-                    <text
-                      x="1"
-                      y="22"
-                      fill="currentColor"
-                      stroke="none"
-                      font-size="11px"
-                      font-family="monospace"
-                      font-weight="600"
-                    >
-                      SVG
-                    </text>
-                  </g>
-                </svg>
+                <span class="material-icons me-1">download</span> Save as SVG
               </button>
             </div>
           </div>

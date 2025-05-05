@@ -5,6 +5,8 @@ import GovtechStackCommunityConfig from '@/assets/presets/govtech_stack.json'
 import Hackomania2025Config from '@/assets/presets/hackomania2025.json'
 import PlainConfig from '@/assets/presets/plain.json'
 import type { DrawType, Options as StyledQRCodeProps } from 'qr-code-styling'
+import iNTMUConfig from '@/assets/presets/iNT_mu.json'
+import INT_MU_LOGO from '@/assets/iNT_Logo.png'
 
 export interface CustomStyleProps {
   borderRadius?: string
@@ -316,7 +318,16 @@ export const hackomania2025Preset = {
   style: Hackomania2025Config.style
 } as Preset
 
+export const iNTMUPreset = {
+  ...defaultPresetOptions,
+  name: 'iNT MU',
+  ...iNTMUConfig.props,
+  style: iNTMUConfig.style,
+  image: INT_MU_LOGO
+} as Preset
+
 export const allPresets: Preset[] = [
+  iNTMUPreset,
   defaultPreset,
   plainPreset,
   ...[
