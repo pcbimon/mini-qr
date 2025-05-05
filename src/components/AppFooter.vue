@@ -63,36 +63,13 @@ onMounted(() => {
         class="text-zinc-900 hover:text-zinc-700 dark:text-zinc-100 dark:hover:text-zinc-300"
         >Estee Tey 🐧🌻</a
       >
-      <span>|</span>
-      <Dialog>
-          <DialogTrigger as-child>
-             <button class="secondary-button" :aria-label="t('View changelog')" :disabled="isLoading">
-                 {{ isLoading ? '...' : version }}
-             </button>
-          </DialogTrigger>
-          <DialogContent class="flex max-h-[80vh] flex-col sm:max-w-md" @open-auto-focus.prevent>
-            <DialogHeader>
-                <DialogTitle>{{ t('Changelog') }}</DialogTitle>
-                <DialogClose
-                class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
-                >
-                <X class="size-4" />
-                <span class="sr-only">{{ t('Close') }}</span>
-                </DialogClose>
-            </DialogHeader>
-
-            <div class="flex-1 overflow-y-auto pr-2">
-                <DialogDescription
-                as="div"
-                class="prose prose-sm max-w-none text-start dark:prose-invert prose-li:my-1"
-                >
-                <div v-if="isLoading">Loading...</div>
-                <div v-else-if="changelogContent" v-html="changelogContent"></div>
-                <div v-else>{{ t('Failed to load changelog') }}</div>
-                </DialogDescription>
-            </div>
-          </DialogContent>
-      </Dialog>
+      <span>{{ t('Modified by') }}</span>
+      <a
+        href="https://github.com/pcbimon"
+        target="_blank"
+        class="text-zinc-900 hover:text-zinc-700 dark:text-zinc-100 dark:hover:text-zinc-300"
+        >pcbimon</a
+      >
     </div>
   </footer>
 </template>

@@ -256,6 +256,15 @@ onUnmounted(() => {
               >Estee Tey 🐧🌻</a
             >
           </div>
+          <div class="flex items-center justify-center gap-1">
+            <span>{{ t('Modified by') }}</span>
+            <a
+              href="https://github.com/pcbimon"
+              target="_blank"
+              class="text-zinc-900 hover:text-zinc-700 dark:text-zinc-100 dark:hover:text-zinc-300"
+              >pcbimon</a
+            >
+          </div>
         </div>
       </div>
     </div>
