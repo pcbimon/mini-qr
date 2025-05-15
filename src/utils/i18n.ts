@@ -29,9 +29,10 @@ import sv from '../../locales/sv.json'
 import tr from '../../locales/tr.json'
 import uk from '../../locales/uk.json'
 import zh from '../../locales/zh.json'
+import th from '../../locales/th.json'
 
 export const i18n = createI18n({
-  locale: 'en',
+  locale: 'th',
   legacy: false,
   messages: {
     bg,
@@ -61,6 +62,7 @@ export const i18n = createI18n({
     sk,
     sl,
     sv,
+    th,
     tr,
     uk,
     zh
