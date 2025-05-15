@@ -13,6 +13,7 @@ dist
 dist-ssr
 coverage
 *.local
+crowdin.yml
 
 /cypress/videos/
 /cypress/screenshots/
@@ -26,3 +27,10 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+dev-dist
+
+.env
+
+# Playwright
+test-results/
+playwright-report/
