@@ -30,7 +30,6 @@ import th from '../../locales/th.json'
 import tr from '../../locales/tr.json'
 import uk from '../../locales/uk.json'
 import zh from '../../locales/zh.json'
-import th from '../../locales/th.json'
 
 export const i18n = createI18n({
   locale: 'th',
