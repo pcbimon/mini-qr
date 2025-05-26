@@ -5,8 +5,8 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { VitePWA } from 'vite-plugin-pwa'
 
-export default defineConfig({
-  base: '/mini-qr/', // แทนที่ 'mini-qr' ด้วยชื่อ repository ของคุณ
+export default defineConfig(({ command }) => ({
+  base: command === 'serve' ? '' : '/mini-qr/', // ถ้า run dev (serve) ให้ base เป็น string empty
   plugins: [
     vue(),
     vueJsx(),
@@ -91,4 +91,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
-})
+}))
