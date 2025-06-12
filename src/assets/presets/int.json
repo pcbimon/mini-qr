@@ -21,7 +21,7 @@
       "margin": 0
     },
     "qrOptions": {
-      "errorCorrectionLevel": "Q"
+      "errorCorrectionLevel": "H"
     }
   },
   "style": {
