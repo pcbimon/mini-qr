@@ -5,7 +5,7 @@ import GovtechStackCommunityConfig from '@/assets/presets/govtech_stack.json'
 import Hackomania2025Config from '@/assets/presets/hackomania2025.json'
 import PlainConfig from '@/assets/presets/plain.json'
 import iNTConfig from '@/assets/presets/int.json'
-import type { DrawType, Options as StyledQRCodeProps } from 'qr-code-styling'
+import type { DrawType, Options as StyledQRCodeProps } from 'qr-code-styling-utf8'
 
 export interface CustomStyleProps {
   borderRadius?: string
