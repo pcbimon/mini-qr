@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "pnpm clear && vite build",
     "preview": "vite preview",
     "test:e2e": "playwright test",
     "vitest": "vitest",

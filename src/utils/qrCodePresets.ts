@@ -309,7 +309,7 @@ export const plainPreset = {
   ...PlainConfig.props,
   style: PlainConfig.style
 } as Preset
-
+// Preset for iNT Mahidol
 export const intPreset = {
   ...defaultPresetOptions,
   name: 'iNT Preset',
