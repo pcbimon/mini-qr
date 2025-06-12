@@ -4,6 +4,7 @@ import SpDigitalConfig from '@/assets/presets/spdigital.json'
 import GovtechStackCommunityConfig from '@/assets/presets/govtech_stack.json'
 import Hackomania2025Config from '@/assets/presets/hackomania2025.json'
 import PlainConfig from '@/assets/presets/plain.json'
+import iNTConfig from '@/assets/presets/int.json'
 import type { DrawType, Options as StyledQRCodeProps } from 'qr-code-styling'
 
 export interface CustomStyleProps {
@@ -309,6 +310,13 @@ export const plainPreset = {
   style: PlainConfig.style
 } as Preset
 
+export const intPreset = {
+  ...defaultPresetOptions,
+  name: 'iNT Preset',
+  ...iNTConfig.props,
+  style: iNTConfig.style
+} as Preset
+
 export const hackomania2025Preset = {
   ...defaultPresetOptions,
   name: 'Hackomania 2025',
@@ -316,26 +324,7 @@ export const hackomania2025Preset = {
   style: Hackomania2025Config.style
 } as Preset
 
-export const builtInPresets: Preset[] = [
-  lyqhtPreset,
-  plainPreset,
-  ...[
-    padletPreset,
-    uiliciousPreset,
-    supabaseGreenPreset,
-    supabasePurplePreset,
-    vercelLightPreset,
-    vercelDarkPreset,
-    viteConf2023Preset,
-    vueJsPreset,
-    vuei18nPreset,
-    pejuangKodePreset,
-    geeksHackingPreset,
-    spDigitalPreset,
-    govtechStackCommunityPreset,
-    hackomania2025Preset
-  ].sort((a, b) => a.name.localeCompare(b.name))
-]
+export const builtInPresets: Preset[] = [intPreset, plainPreset]
 
 function parsePresetsFromEnv(envVal?: string): Preset[] | undefined {
   if (!envVal) return undefined
@@ -350,8 +339,7 @@ function parsePresetsFromEnv(envVal?: string): Preset[] | undefined {
 const envPresets = parsePresetsFromEnv(import.meta.env.VITE_QR_CODE_PRESETS)
 export const allQrCodePresets: Preset[] = envPresets ?? builtInPresets
 
-export const defaultPreset: Preset =
-  import.meta.env.VITE_DEFAULT_PRESET
-    ? allQrCodePresets.find((p) => p.name === import.meta.env.VITE_DEFAULT_PRESET) ??
-      allQrCodePresets[0]
-    : allQrCodePresets[0]
+export const defaultPreset: Preset = import.meta.env.VITE_DEFAULT_PRESET
+  ? (allQrCodePresets.find((p) => p.name === import.meta.env.VITE_DEFAULT_PRESET) ??
+    allQrCodePresets[0])
+  : allQrCodePresets[0]
