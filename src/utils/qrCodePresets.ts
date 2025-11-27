@@ -4,6 +4,7 @@ import SpDigitalConfig from '@/assets/presets/spdigital.json'
 import GovtechStackCommunityConfig from '@/assets/presets/govtech_stack.json'
 import Hackomania2025Config from '@/assets/presets/hackomania2025.json'
 import PlainConfig from '@/assets/presets/plain.json'
+import INTConfig from '@/assets/presets/int.json'
 import type { DrawType, Options as StyledQRCodeProps } from 'qr-code-styling'
 
 export interface CustomStyleProps {
@@ -315,26 +316,15 @@ export const hackomania2025Preset = {
   ...Hackomania2025Config.props,
   style: Hackomania2025Config.style
 } as Preset
-
+export const intPreset: Preset = {
+  ...defaultPresetOptions,
+  name: 'INT',
+  ...INTConfig.props,
+  style: INTConfig.style
+} as Preset
 export const builtInPresets: Preset[] = [
-  lyqhtPreset,
-  plainPreset,
-  ...[
-    padletPreset,
-    uiliciousPreset,
-    supabaseGreenPreset,
-    supabasePurplePreset,
-    vercelLightPreset,
-    vercelDarkPreset,
-    viteConf2023Preset,
-    vueJsPreset,
-    vuei18nPreset,
-    pejuangKodePreset,
-    geeksHackingPreset,
-    spDigitalPreset,
-    govtechStackCommunityPreset,
-    hackomania2025Preset
-  ].sort((a, b) => a.name.localeCompare(b.name))
+  intPreset,
+  plainPreset
 ]
 
 function parsePresetsFromEnv(envVal?: string): Preset[] | undefined {

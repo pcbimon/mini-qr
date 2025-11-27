@@ -1,0 +1,2 @@
+# Ignore files that cause Prettier plugin errors
+src/utils/qrCodePresets.ts
