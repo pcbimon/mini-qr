@@ -66,6 +66,12 @@ onMounted(() => {
         class="text-zinc-900 hover:text-zinc-700 dark:text-zinc-100 dark:hover:text-zinc-300"
         >Estee Tey 🐧🌻</a
       >
+      <a
+        href="https://github.com/pcbimon"
+        target="_blank"
+        class="text-zinc-900 hover:text-zinc-700 dark:text-zinc-100 dark:hover:text-zinc-300"
+        >Patiapt C.</a
+      >
       <span>|</span>
       <Dialog>
         <DialogTrigger as-child>

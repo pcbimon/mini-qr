@@ -14,7 +14,8 @@
     "format": "prettier --write",
     "postinstall": "husky install",
     "generate-changelog": "sh scripts/generate-version.sh",
-    "generate-splash": "node scripts/generate-splash-screens.js"
+    "generate-splash": "node scripts/generate-splash-screens.js",
+    "gh-pages": "gh-pages -d dist -b gh-pages"
   },
   "lint-staged": {
     "*.{vue,js,jsx,ts,tsx,json}": [
@@ -61,11 +62,11 @@
     "eslint": "^9",
     "eslint-plugin-tailwindcss": "^3.18.2",
     "eslint-plugin-vue": "^10.5.1",
+    "gh-pages": "^6.3.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.4.3",
     "postcss": "^8.5.3",
-    "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.7.1",
+    "prettier": "^3.6.2",
     "sharp": "^0.33.5",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.46.2",
